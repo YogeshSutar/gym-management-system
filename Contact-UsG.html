@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="with=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>this about page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <section class="new-header">
+        <nav>
+            <label class="logo">SAMARTH FITNESS GYM </label>
+            <div class="nav-links for-about" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                
+                <ul class="header1">
+                    <li><a href="Index.html">Home</a></li>
+                        <li><a href="aboutG.html">About</a></li>
+                        <li><a href="courseG.html">Course</a></li>
+                        <li><a href="Contact-UsG.html">Contact Us</a></li>
+                    
+                </ul>
+
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+    <div class="mahesh">
+        <h1> Contact Us</h1>
+
+    </div>
+    </section>
+
+
+<!--             for map location              -->
+
+    <section class="location">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d44288.319984526854!2d73.88770870132512!3d18.570075252391575!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b917c648a013%3A0x34e2a99483d73b1f!2sSamarth%20Fitness!5e0!3m2!1sen!2sin!4v1637684216414!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </section>
+
+    <section class="qri">
+        <h2>For General Inquiries</h2>
+        <p>call Us On 91**********</p>
+
+        <h2>For any technical or IT related queries</h2>
+        <p>Write to us at sutarmahesh044@gmail.com</p>
+    </section>
+
+    <section class="contact">
+        <h3>Send Us A Message</h3>
+        <div class="row">
+            <div class="contact-col">
+                <form class="contact-col1" autocomplete="off" name="google-sheet" method="post">
+                    <input type="text" name="username" placeholder="Enter Your Name" required>
+                    <input type="email" name="email" placeholder="Enter Your Mail" required>
+                    <input type="text" name="phone" placeholder="Enter Your phone number" required>
+                    <textarea rows="5" name="msg" placeholder="Here You can Contact us" required></textarea>
+                    <button type="submit" class="rakesh comment-submit">SUBMIT</button>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="sym-loc">
+                <i class="fa fa-home"></i>
+                <span>
+                    <h5>xyz this is the address</h5>
+                    <p>akurdi pimpri chinchwad</p>
+                </span>
+            </div>
+            <div class="sym-loc">
+                <i class="fa fa-phone"></i>
+                <span>
+                    <h5>91**********</h5>
+                    <p>monday to saturdy sunday for holiday</p>
+                </span>
+            </div>
+            <div class="sym-loc">
+                <i class="fa fa-envelope-o"></i>
+                <span>
+                    <h5>mahesh044@gamil.com</h5>
+                    <p>EMAIL US FOR QUERY</p>
+                </span>
+            </div>
+        </div>
+    </section>
+    <script type="text/javascript">
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwnIM9xsepo3mFyUo0lXo2i8ZSkn1mmH-NPSGIc-PMK6dpLJz6eFRRf2-CM1ITwF7Y/exec'
+            const form = document.forms['google-sheet']
+
+            form.addEventListener('submit', e=>{
+                e.preventDefault()
+                fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                   .then(response => alert("you have successfully submited."))
+                   .catch(error => console.error('Error!', error.message))
+            })
+    
+    
+    
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!------  This Footer For Giving Social media link To the User-------->
+
+    <section class="Footer">
+        <h4>Follow Us</h4>
+        <p>That is Follow Us Section.
+            you can ask us with clicking this Follow us link. </p>
+            <div class="icons">
+                <i class="fa fa-star" ></i>
+                <i class="fa fa-facebook" ></i>
+                <i class="fa fa-twitter" ></i>
+                <i class="fa fa-instagram" ></i>
+                <i class="fa fa-linkedin" ></i>
+            </div>
+
+    </section>
+
+<!----------  We Are Using JavaScript Again For Menu Bar   ---------->
+
+    <script>
+        var navLinks = document.getElementById("navLinks");
+        function showMenu(){
+            navLinks.style.right = "0";
+        }
+        function hideMenu(){
+            navLinks.style.right = "-200px";
+        }
+    </script>
+
+
+
+
+</body>
+</html>
+    
+
+

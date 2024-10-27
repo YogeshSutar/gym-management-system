@@ -1,0 +1,77 @@
+.main_content{
+    background-color: rgba(165, 165, 165, 0.592);
+    display:flex;     
+    flex-wrap: wrap; 
+    width:800px;
+    padding: 80px 55px;
+    padding-right:30px ;
+    border-radius: 15px;
+    margin-left: 25%;
+    margin-top: 3%;
+
+}
+.sub_content{
+    margin-right: 20px;
+    /* border: 1px solid red; */
+    width: calc(100% / 2 - 20px);
+    padding: 20px;
+    padding-right: 20px;
+}
+span{
+    font-size: 26px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+}
+.innertext{
+    padding-left: 28px;
+    border-radius: 10px;
+    border: 1px solid black;
+background: none;
+color: white;
+font-size: 24px;
+    
+}
+input::-webkit-input-placeholder{
+    color: rgba(25, 25, 25, 0.782);
+}
+
+.inneroption{
+border: 1px solid black;
+border-radius: 1px;
+    background: none;
+color: rgb(0, 0, 0);
+font-size: 24px;
+padding: 5px;
+padding-left: 20px;
+padding-right: 100px;
+    
+}
+.btnreg {
+
+    /* margin: 21px 300px; */
+    padding: 20px 27px;
+    outline: none;
+    color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border: 2px solid white;
+    background: rgba(0, 0, 0, 0.6);
+    margin-top: 20px;
+    margin-left: 40%;
+}
+
+#line {
+    text-decoration: none;
+}
+
+.btnreg:hover {
+    color: black;
+    background: rgb(255, 255, 255);
+    transition: 0.3s;
+}
+b{
+    font-size: 22px;
+}
+#uexists{
+    display:none;
+    color:rgb(6, 245, 6);
+}

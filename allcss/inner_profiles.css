@@ -1,0 +1,67 @@
+
+
+.main_nav_box {
+    border: 1px solid rgba(0, 0, 0, 0);
+    width: 28%;
+    background-color: rgba(0, 0, 0, 0.4);
+    height: 100%;
+    margin-top: 60px;
+    padding-top: 50px;
+    position: fixed;
+
+}
+.image_styling{
+    margin-left: 65px;
+}
+.main_inner_box{
+    border: 1px solid rgba(0,0,0,0.2);
+    background: rgba(0,0,0,0.2);
+    width:1020px;
+    height: 600px;
+    position: absolute;
+    padding: 40px;
+    margin-left: 500px;
+    margin-top: 110px;
+    
+}
+.sub_inner_box{
+    margin-left:0px;
+    padding: 20px;
+    display: flex;
+flex-wrap: wrap;
+/* justify-content: space-between; */
+}
+
+.details{
+font-size: 20px;
+color: rgb(255, 255, 255);
+padding: 10px 0px;
+}
+.input_inner{
+width: 449px;
+color: white;
+text-shadow: 0px 0px 10px black;
+}
+.detail_head{
+font-weight: bolder;
+font-size: 30px;
+color: black;
+}
+.editbtn{
+padding: 15px;
+font-weight: bolder;
+font-size: 20px;
+border-radius: 5px;
+border: 1px solid white;
+background-color:white;
+transition: 0.3s;
+margin-left: 20px;
+}   
+.editbtn:hover{
+color: white;
+border: 1px solid black;
+background-color: black;
+}
+.editbtn i{
+padding-left:10px ;
+}

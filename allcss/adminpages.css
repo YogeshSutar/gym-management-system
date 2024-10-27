@@ -1,0 +1,33 @@
+.adminhead{
+    color: rgb(255, 0, 0);
+    padding: 50px;
+    padding-top: 150px;
+}
+.main_server_nav{
+    background-color:#1c1c1ce9;
+    box-shadow: -4px -33px 41px 10px #1c1c1ce9;
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+}
+.sub_server_nav{
+    padding: 10px;
+}
+.serverbtn{
+    padding: 10px;
+    border-radius: 10px;
+    font-weight:bold;
+    border: 1px solid rgb(255, 255, 255);   
+    color: rgb(255, 255, 255);    
+    background:none;
+    transition: 0.2s;
+}
+.serverbtn:hover{
+    background: white;
+    border: 1px solid white;
+    font-weight:bold;
+    color: black;
+
+}
+
+

@@ -1,0 +1,391 @@
+body{
+
+    padding: 0%;
+    margin: 0%;
+}
+
+/* left to right , right to left information */
+.imageheader{
+    font-family:'Times New Roman', Times, serif;
+    color: white;
+    padding-top: 35%;
+    padding-left: 83px;
+    font-size: 42px;
+    transition: 1s;
+}
+
+.imageheader:hover{
+    color: rgb(255, 255, 255);
+    /* text-shadow: rgb(255, 10, 10); */
+    font-size: 55px;
+    transition: 1s;
+}
+
+.titleworkout{
+    text-align: center;
+    font-size: 45px;
+    color: white;
+    padding-bottom: 40px;
+    transition: 0.4s;
+}
+.titleworkout:hover{
+    text-shadow:0 0 5px rgb(255, 213, 0);
+    color: black;
+}
+
+.main_img_info{
+    background-color: rgba(0, 0, 0, 0.904);
+    /* border: solid 2px red; */
+    padding: 50px;
+    /* margin: 50px; */
+    box-shadow: -4px -33px 41px 10px #1c1c1ce9;
+}
+.sub_img_info{
+    display: flex;
+    /* border: solid 2px red; */
+    
+}
+                          /* left to right */
+.left_right_img{
+    padding: 10px;
+    width: 50%;
+    height: 100%;
+}
+.left_img{
+    /* border: solid 2px red; */
+    display: contents;
+}
+.right_info{
+    /* border: solid 2px red; */
+    padding: 20px;
+}
+.right_info h1{
+    padding-top: 10px;
+    text-align: center;
+    color: white;
+    font-weight: bolder;
+    font-size: 35px;
+    transition: 0.5s;
+}
+.right_info h1:hover{
+    color: rgba(255, 0, 0, 0.808);
+}
+.right_info p{
+    font-size: 19px;
+    color: white;
+    margin: 30px;
+}
+                           /* right to left */
+.right_img{
+    /* border: solid 2px red; */
+    display: contents;
+}
+.left_info{
+    /* border: solid 2px red; */
+    padding: 20px;
+}
+.left_info h1{
+    padding-top: 10px;
+    text-align: center;
+    color: white;
+    font-weight: bolder;
+    font-size: 35px;
+    transition: 0.5s;
+}
+.left_info h1:hover{
+    color: rgba(255, 0, 0, 0.808);
+}
+.left_info p{
+    font-size: 19px;
+    color: white;
+    margin: 30px;
+}
+
+
+
+
+/* symbolic style get fitness  */
+
+
+.iconcard{
+    background-color: rgba(0, 0, 0, 0.904);
+}
+.getfitness{
+    font-size: 45px;
+    text-align: center;
+    padding-top: 50px;
+    /* padding-bottom: 10px; */
+    color: white;
+    transition: 0.4s;
+}
+.getfitness:hover{
+    text-shadow:0 0 5px rgb(255, 213, 0);
+    color: black;
+}
+.iconinfo{
+    
+display: flex;
+text-align: center;
+/* margin: 260px; */
+padding-left: 26%;
+}
+.icons{
+    /* float: right; */
+/* padding-left: 150px; */
+/* padding-right: 150px; */
+    margin: 60px;
+}
+.icons p{
+    font-size: 16px;
+}
+.fa{
+    width: 90px;
+    height: 90px;
+    background-color: rgb(61, 61, 61);
+    /* display: flex; */
+    /* display: inline; */
+    /* display: block; */
+    padding: 24px;
+    justify-content: center;
+    border-radius: 50%; 
+}
+i{
+text-shadow: 0 0 6px #FFD700;
+color:#fde453 ;
+/* padding-bottom: 10px; */
+padding: 30px;
+margin: 6px;
+padding-left: 32px;
+
+
+/* margin: -3px; */
+    /* size: 200px; */
+}
+.iconinfo p{
+    color: aliceblue;
+}
+.iconinfo h1{
+    color: white;
+    text-shadow:0 0 3px #fde453;
+}
+/* .maincards{
+    border: solid 2px red;
+    display: flex;
+}
+.subcards{
+    border: solid 2px red;
+
+
+}
+.cardsphase1{
+    display: flex;
+    border: solid 2px red;
+    margin: -16px 64px;
+}
+.cardsinfo .months{
+    justify-content: space-between;
+    padding: 10px;
+    font-size: 30px;
+    text-align: center;
+    padding-right: 90px;
+}
+.cardsinfo .namers{
+    padding: 21px;
+    text-align: center;
+    margin-top: 35px;
+    color: #fde453;
+}
+.cardsinfo .namers p{
+    color: red;
+    font-size: 12px;
+    text-align: center;
+
+}
+.cardsinfo b{
+    font-weight: bolder;
+    padding: 29px;
+    font-size: 70px;
+} */
+/* 
+.cardsphase2{
+    padding: 20px;
+    position: absolute;
+    margin: 25px 23px;
+    margin-left: 64px;
+    margin-top: 95px;
+    width: 332px;
+} */
+/* argin: 10px 0px;
+    background-color: white;
+    height: 2px;
+    position: absolute;
+    width: 105%;
+    top: 0px;
+    transform: rotate(-11deg); */
+
+
+/* get fitnesss join gym  */
+.maincards{
+    display: inline-flex;
+    padding-left: 20px;
+    padding-bottom: 80px;
+    /* border: solid 2px red; */
+}
+.subcards{
+    margin-left: 80px;
+    /* border: solid 2px red; */
+    /* background-color: rgba(175, 175, 175, 0.2); */
+    border-radius: 20px;
+    /* transition: 0.5s; */
+
+    backdrop-filter: blur(100px);
+    background: rgb(255 255 255 / 10%);
+    position: relative;
+    transition: all 300ms ease;
+    /* -webkit-perspective: 1000px;
+    -webkit-transform: translate3d(0,0,0); */
+}
+.subcards:hover{
+    background-color: rgba(175, 175, 175, 0.1);
+    transform: scale(1.1);
+    /* transform: scalex(1.1); */
+
+}
+.cardsphase1{
+    margin-bottom: -45px;
+    display: flex;
+    /* border: solid 2px red; */
+}
+.month{
+    padding: 27px;
+    margin-left: 20px;
+    padding-top: 58px;
+}
+.month h1{
+    color: white;
+text-align: center;
+font-size: 30px;
+
+}
+.month h1 b{
+    color: white;
+    font-size: 50px;
+}
+.rupees{
+    margin-left: 30px;
+    padding: 30px;
+}
+.rupees h1{
+    text-align: center;
+    font-size: 40px;
+
+    color: #ffd579d8;
+    padding-top: 10px;
+}
+.rupees p{
+    color: rgb(255, 255, 255);
+    padding: 10px;
+    font-size: 14px;
+}
+
+
+.cardsphase2{
+    /* border: solid 2px red; */
+}
+.cardinfo{
+    color: white;
+    padding: 20px;
+
+}
+.cardinfo ul li{
+    font-size: 17px;
+}
+
+.btnoin{
+    justify-content: center;
+    text-align: center;
+    padding-bottom: 30px;
+}
+.joinnow{
+    font-size: 20px;
+    padding: 5px;
+    padding-left: 30px ;
+    padding-right: 30px;
+    text-align: center;
+    justify-content: center;
+    color: rgb(255, 255, 255);
+    background:transparent;
+    /* cursor: pointer; */
+    overflow: hidden;
+    position: relative;
+    border: 2px solid white;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+.joinnow:hover{
+    /* background-image: linear-gradient(#ffd900be, #ff0000b0); */
+    background-color: #ffffff;
+    letter-spacing: 2px;
+    font-weight: bold;
+    /* font-size: 21px; */
+    color: rgb(0, 0, 0);
+}
+
+
+/* 
+.dietimage{
+    justify-content: center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+} */
+.dietweight{
+    margin-top: 50px;
+    display: inline-table;
+}
+.main-icon .dieticon{
+    color: red;
+    background: none;
+}
+.main-icon{
+    padding-left: 4%;
+    padding-top:40px;
+}
+.sub-icon{
+    display: flex;
+    padding-top: 0px;
+    margin-top: -40px;
+}
+
+
+.Samarth_Transform_Header{
+    padding: 20px;
+    padding-left: 4%;
+    padding-top: 130px;
+    font-size: 45px;
+    font-weight: bold;
+    color: white;
+}
+.Samarth_Transform_Para{
+    font-size: 28px;
+    padding-left: 4%;
+    color: rgb(197, 197, 197);
+    font-weight: bold;
+}
+
+.sub-icon h1{
+    padding: 30px;
+    padding-left: 1px;
+    color: white;
+    margin-top: 17px;
+}
+
+.transform{
+    font-size: 50px;
+    color: rebeccapurple;
+}
+
+.sub-icon .transform{
+    font-size: 50px;
+    color: white;
+}

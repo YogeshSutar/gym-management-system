@@ -1,0 +1,61 @@
+.txnheader {
+    color: #6bbbff;
+    padding-left: 35%;
+    text-align: center;
+    font-size: 40px;
+}
+
+
+.maintxnbox {
+    padding: 40px;
+    background-color: rgba(0,0,0, 0.46);
+    padding-left: 100px;
+    margin-left: 47.5%;
+    border-radius: 50px;
+    padding-right: 100px;
+}
+
+.subtxnbox {
+    font-size: 30px;
+
+
+}
+
+.headnames {
+    padding: 25px;
+    font-size: 28px;
+    color: white;
+}
+
+input {
+
+    color: rgb(255, 255, 255);
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 10px;
+    background: none;
+    font-size: 18px;
+    padding: 10px;
+    padding-left:20px ;
+    /* float: right; */
+}
+
+.submittxnbutton {
+    text-align: center;
+    padding: 20px;
+    padding-left: 38%;
+}
+
+.innersubmittxn {
+    padding: 15px;
+    cursor: pointer;
+    color: black;
+    font-weight: bold;
+    background: white;
+    border: 1px solid white;
+    transition: 0.2s;
+}
+
+.innersubmittxn:hover {
+    color: white;
+    background: none;
+}

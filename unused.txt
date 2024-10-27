@@ -1,0 +1,536 @@
+                                  <button type="submit" class="searchicon" id="search" name="filter_btn" > button </button>
+<script type="text/javascript">
+$(document).ready(function(){
+    console.log('first');
+    $('#search').keyup(function(){
+        console.log('second');
+        search_table($(this).val());
+    });
+function search_table(value){
+    $('#myTable tr').each(function(){
+        var found = 'false';
+        $(this).each(function(){
+            if($(this).text().toLowerCase().indexOf(value.toLowerCase())>=0){
+                found = 'true';
+            }
+        });
+        if(found=='true'){
+            $(this).show();
+            console.log('hello');
+        }
+        else{
+            $(this).hide();
+        }
+    });
+}
+   
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<?php
+header("Pragma: no-cache");
+header("Cache-Control: no-cache");
+header("Expires: 0");
+
+
+$server = "localhost";
+$susername = "root";
+$spassword = "";
+$databasename = "gym";
+$conn = mysqli_connect($server, $susername, $spassword, $databasename);
+session_start();
+// $reset_token=bin2hex(random_bytes(16));
+// $reset_token = $_SESSION['resettoken'];
+// // $reset_token=$_POST['resettoken'];
+// $sq = "SELECT * FROM `checkoutplane` where `resettoken`='$reset_token'";
+// $insertb = mysqli_query($conn, $sq);
+// // $as=mysqli_num_rows($insertb);
+
+$orderid ="ORDS". rand(10000, 99999999);
+$username = $_GET['username'];
+$planname = $_GET['planname'];
+$price;
+$sql = "SELECT * FROM `plan` where `plan_name`='$planname'";
+$insert = mysqli_query($conn, $sql);
+while ($data = mysqli_fetch_assoc($insert)) {
+	$price = $data['price'];
+}
+// $sqlb2 = "SELECT * FROM `checkoutplane` where `resettoken`='$reset_token'";
+// $insertb = mysqli_query($conn, $sqlb2);
+// $as=mysqli_num_rows($insertb);
+
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+	<title>Merchant Check Out Page</title>
+	<meta name="GENERATOR" content="Evrsoft First Page">
+	<link rel="stylesheet" href="allcss/TxnTest.css">
+</head>
+<style>
+	/* .datatable{
+	margin-left: auto;
+  margin-right: auto;
+border: 2px solid red;
+background-color: rgba(41, 41, 41, 0.592);
+border-radius: 8px;
+
+	
+} */
+</style>
+
+<body style="background: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)),url(images/txntestphoto.jpg) no-repeat center; background-size: cover;width:100%; height:100%; background-attachment:fixed; ">
+	<div>
+
+		<!-- <header "> -->
+
+
+		<h1 class="txnheader">Merchant Check Out Page</h1>
+
+		<form method="post" action="pgRedirect.php">
+			<section>
+				<table class="maintxnbox">
+					<!-- <div class="subtxnbox"> -->
+					<tr class="subtxnbox">
+						<td class="headnames">
+							Order ID :
+						</td>
+						<td >
+							<?php echo '<p style="color:white; font-weight:bold; font-size:31px;">'.$orderid.'</p>' ?>
+							<input type="hidden" id="ORDER_ID" tabindex="1" maxlength="20" size="20" name="ORDER_ID" autocomplete="off" value="<?php echo $orderid ?>">
+						</td>
+					</tr>
+					
+					<!-- </div> -->
+
+					<input style="display:none;" id="CUST_ID" tabindex="2" maxlength="12" size="12" name="CUST_ID" autocomplete="off" value="CUST001">
+					<input style="display:none;" id="INDUSTRY_TYPE_ID" tabindex="4" maxlength="12" size="12" name="INDUSTRY_TYPE_ID" autocomplete="off" value="Retail">
+					<input style="display:none;" id="CHANNEL_ID" tabindex="4" maxlength="12" size="12" name="CHANNEL_ID" autocomplete="off" value="WEB">
+
+					<!-- <div class="subtxnbox"> -->
+					<tr class="subtxnbox">
+						<td class="headnames">
+							Username :
+						</td>
+						<td>
+						<?php echo '<p style="color:white; font-weight:bold; font-size:31px;">'.$username.'</p>' ?>
+							<input type="hidden" id="CUST_ID" tabindex="2" maxlength="12" size="12" name="username" autocomplete="off" value="<?php echo $username ?>"></input>
+						</td>
+					</tr>
+					<!-- </div> -->
+					<!-- <div class="subtxnbox"> -->
+					<tr class="subtxnbox">
+						<td class="headnames">
+
+							Selected Plan :
+						</td>
+						<td>
+						<?php echo '<p style="color:white; font-weight:bold; font-size:31px;">'.$planname.'</p>' ?>
+							<input type="hidden" id="plan" tabindex="3" maxlength="12" size="12" name="planname" autocomplete="off" value="<?php echo $planname; ?>"></input>
+						</td>
+					</tr>
+					<!-- </div> -->
+					<!-- <div class="subtxnbox"> -->
+					<tr class="subtxnbox">
+						<td class="headnames">
+
+							Amount :
+						</td>
+						<td>
+						<?php echo '<p style="color:white; font-weight:bold; font-size:31px;">'.$price.'</p>' ?>
+
+							<input type="hidden" title="TXN_AMOUNT" tabindex="10" type="text" name="TXN_AMOUNT" value="<?php echo $price; ?>">
+						</td>
+					</tr>
+					<!-- </div> -->
+
+					<!-- <div class="subtxnbox"> -->
+					<tr >
+						<td class="submittxnbutton">
+
+							<input value="CheckOut" type="submit" class="innersubmittxn">
+						</td>
+					</tr>
+					<!-- </div> -->
+				</table>
+			</section>
+			</table>
+
+			<!-- * - Mandatory Fields -->
+		</form>
+	</div>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+pgredirect code checkout code
+
+
+$randomcode=mt_rand(0,999999);
+
+	//  $checkoutplane="INSERT INTO `checkoutplane` (`orderid`, `username`,`selected_plan`,`txn_amount`,'resettoken') VALUES ('$ORDER_ID', '$username', '$planname','$TXN_AMOUNT','$randomcode')";
+	 $checkoutplane="INSERT INTO `checkoutplane`(`orderid`, `username`, `selected_plan`, `txn_amount`, `resettoken`,`status`) VALUES ('$ORDER_ID','$username','$planname','$TXN_AMOUNT','$randomcode','')";
+	 $binsert=mysqli_query($conn,$checkoutplane);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	 offline 
+
+
+
+
+	 <?php
+require('dbconnect.php');
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offline User Payment Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="allcss/offlinepayments.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<?php
+
+
+?>
+
+<body style="background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,1)),url(images/offlinepayment.jpg) no-repeat center; background-size: cover;width:100%; height:100%; background-attachment:fixed; ">
+<?php
+
+    if (isset($_POST['submit'])) {
+        $username = $_POST['username'];
+        $name=$_POST['names'];
+        $planname = $_POST['planname'];
+        $price=$_POST['price'];
+        $duration = $_POST['duration'];
+        $orderid = "NO";
+        $payment_type = 'Offline';
+        $status = 'SUCCESS';
+        echo $planname;
+
+        $query = "SELECT * FROM `plan`";
+        $query_run = mysqli_query($conn, $query);
+        while ($data = mysqli_fetch_assoc($query_run)) {
+         $price = $data['price'];
+  
+        }
+        $query = "INSERT INTO `checkoutplane`(`order_new_id`, `name`, `username`, `selected_plan`, `txn_amount`, `status`, `duration`, `payment_type`) VALUES ('$orderid','$name','$username','$planname','$price','$status','$duration','$payment_type')";
+        $result=mysqli_query($conn,$query);
+
+    ?>
+    <form action="" method="POST">
+        <div class="main_content">
+            <div class="sub_content">
+                <span>
+                    Name :
+                </span>
+                <input class="innertext" type="text" name="names" placeholder="Enter Name">
+            </div>
+            <div class="sub_content">
+                <span>
+                    Username :
+                </span>
+                <input class="innertext" type="text" id="username" name="username" placeholder="Enter Username" required>
+                <span id="uexists"><b>Username Exist</b></span>
+
+
+
+
+            </div>
+            <div class="sub_content">
+                <span>
+                    Plan :
+                </span>
+                <br>
+                <select id="" name="" class="inneroption" style="color: white;">>
+                    <option value="" class="inneroption"> Select Plan</option>
+                    <?php
+                    $query = "SELECT * FROM `plan`";
+                    $query_run = mysqli_query($conn, $query);
+                    while ($data = mysqli_fetch_assoc($query_run)) {
+                        echo '
+                    <option value="" class="inneroption" name="planname">'.$planname = $data['plan_name'] . '</option>
+                    ';
+                    }
+                    ?>
+
+                </select>
+            </div>
+            <div class="sub_content">
+                <span>
+                    Amount :
+                </span>
+                <br>
+                <select id="" name="" class="inneroption" style="color: white;">
+                    <option value="" class="inneroption">Select Amount</option>
+                    <?php
+                    $query = "SELECT * FROM `plan`";
+                    $query_run = mysqli_query($conn, $query);
+                    while ($data = mysqli_fetch_assoc($query_run)) {
+                        echo '
+                    <option value="" class="inneroption" name="price">' .$price =  $data['price'] . '</option>
+                    ';
+                    }
+                    ?>
+
+                </select>
+            </div>
+            <div class="sub_content">
+                <span>
+                    Duration :
+                </span>
+                <br>
+                <select id="" name="" class="inneroption" style="color: white;">>
+                    <option value="" class="inneroption"> Select Duration</option>
+                    <?php
+                    $query = "SELECT * FROM `plan`";
+                    $query_run = mysqli_query($conn, $query);
+                    while ($data = mysqli_fetch_assoc($query_run)) {
+                        echo '
+                    <option value="" class="inneroption" name="duration">' . $duration = $data['duration'] . '</option>
+                    ';
+                    }
+                    ?>
+
+                </select>
+            </div>
+            
+            <!-- <div class="sub_content">
+                <span>
+                    date :
+                </span>
+                <input class="innertext" type="date" value="asd">
+
+            </div> -->
+            <button class="btnreg btn" href="#" name="submit" id="btn"><b>Submit</b></button>
+        </div>
+    </form>
+    <?php 
+            }
+    ?>
+</body>
+<script>
+    let us = false;
+    let username = document.getElementById('username');
+
+    username.onkeyup = function() {
+        let user = $('#username').val();
+
+
+        $.ajax({
+            url: 'validusername.php',
+            type: 'post',
+            data: 'username=' + user,
+            success: function(result) {
+                if (result == 'yes') {
+                    $('#uexists').show();
+                }
+                if (result == 'no') {
+                    $('#uexists').hide();
+                    us = true;
+                    console.log(us);
+                }
+            }
+        });
+        console.log("before");
+    }
+</script>
+
+</html>
+
+
+
+
+
+timer countdown start ----------------------------------------------------------------------------------------
+
+
+$date = date('2022-12-14');
+$time = date('12:29:00');
+$date_today= $date. ' ' .$time;
+ echo "It will run till ".$date_today;
+?>
+<script type="text/javascript">
+//set the date we are counting down to
+var count_id = "<?php echo $date_today; ?>";
+var countDownDate = new Date(count_id).getTime(); 
+//Update the count down every 1 second
+var x = setInterval(function(){
+//Get today's date and time
+var now = new Date().getTime();
+//Find the distance between now and the count down date
+var distance = countDownDate - now;
+
+var days = Math.floor(distance/(1000 * 60 * 60 * 24));
+var hours = Math.floor((distance %(1000*60*60*24))/(1000*60*60));
+var minutes = Math.floor((distance %(1000*60*60))/(1000*60));
+var seconds = Math.floor((distance %(1000*60))/1000);
+document.getElementById('displaydemo').innerHTML = days + " d " + hours + " h " + minutes + " m " + seconds + " s " ;
+//Time calculations for day, hours, minutes and
+if(distance<0){
+    clearInterval(x);
+    document.getElementById('displaydemo').innerHTML = "Expired";
+}
+},1000);
+</script>
+<?php
+echo "<p id='displaydemo' style='font-size:40px; color:white;'> </p>"
+?>
+
+
+
+
+
+
+set timer counter countdown ===================================================================================
+        <?php
+        $username = $_SESSION['username'];
+        // $planname = $_POST[]
+        $query_countdown = "SELECT * FROM `plan_user` WHERE `username`= '$username'";
+        $query_countdown_run = mysqli_query($conn, $query_countdown);
+        while ($date_time = mysqli_fetch_assoc($query_countdown_run)) {
+            $start_date_time =  $date_time['date_time'];
+            $end_date_time = $date_time['end_time'];
+        }
+        echo $start_date_time;
+        echo '<br>';
+        echo $end_date_time;
+        echo '<br>';
+
+        $date = date('2022-12-11');
+        $time = date('12:35:00');
+        $date_end = $end_date_time;
+        $date_start = $start_date_time;
+
+        echo "It will run till " . $date_end;
+        ?>
+        <script type="text/javascript">
+            //set the date we are counting down to
+            var count_id = "<?php echo $date_end; ?>";
+            var countDownDate = new Date(count_id).getTime();
+            //Update the count down every 1 second
+            var x = setInterval(function() {
+                var count_start = "<?php echo $date_start; ?>";
+                //Get today's date and time
+                var now = new Date().getTime(count_start);
+                //Find the distance between now and the count down date
+                var distance = countDownDate - now;
+
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                document.getElementById('displaydemo').innerHTML = days + " d " + hours + " h " + minutes + " m " + seconds + " s ";
+                //Time calculations for day, hours, minutes and
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById('displaydemo').innerHTML = "Expired";
+                }
+            }, 1000);
+        </script>
+        <?php
+        echo "<p id='displaydemo' style='font-size:40px; color:white;'> </p>"
+        ?>
+
+        <?php
